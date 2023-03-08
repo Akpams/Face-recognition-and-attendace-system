@@ -2,10 +2,10 @@
 This repo is a simple implementation of facial recognition with an attendance system 
 The implementation is done using face_recognition library with opencv and numpy 
 
-##Dependencies
+#Dependencies
 numpy
 opencv
 face_recognition
 
-##Note
+#Note
 for face_recognition to work cmake must be installed and compiled, this also include installing dlib
