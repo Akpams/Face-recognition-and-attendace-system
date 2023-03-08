@@ -4,10 +4,13 @@ The implementation is done using face_recognition library with opencv and numpy
 
 Dependencies
 
-numpy,
-opencv,
+numpy
+
+opencv
+
 face_recognition
 
 Note
-,
+
+
 for face_recognition to work cmake must be installed and compiled, this also include installing dlib
