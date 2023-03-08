@@ -10,7 +10,7 @@ opencv
 
 face_recognition
 
-Note
+Note**
 
 
-for face_recognition to work cmake must be installed and compiled, this also include installing dlib
+For face_recognition to work cmake must be installed and compiled, this also include installing dlib
