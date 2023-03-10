@@ -4,25 +4,52 @@ import face_recognition
 import os
 from tkinter import *
 from datetime import datetime 
+import pyrebase
 ##create a folder to hold the images to be recognized
 # edit the image name to the name that will be recognized alongside with it.. 
-path ='path/to/image_folder'
+path =r'C:\Users\Client\Documents\computer vision\from database\images\\'
 
 #create a tkinter window to enable select gender before recognition
-gender = Tk()
-gender.title('GENDER')
-gender.geometry('200x200')
-mygender= ['MALE', 'FEMALE', 'OTHERS']
-options =StringVar()
+# gender = Tk()
+# gender.title('GENDER')
+# gender.geometry('200x200')
+# mygender= ['MALE', 'FEMALE', 'OTHERS']
+# options =StringVar()
 
-options.set('select gender')
+# options.set('select gender')
 
-om1 = OptionMenu(gender, options, *mygender)
-choice=Variable.get(self=options)
-print(choice)
-om1.pack(expand=True)
-gender.mainloop()
+# om1 = OptionMenu(gender, options, *mygender)
+# choice=Variable.get(self=options)
+# print(choice)
+# om1.pack(expand=True)
+# gender.mainloop()
 
+##getting images from database
+
+config ={
+    'apiKey': "AIzaSyBF_zQsLersNz-jEIZqFEZZ4JhcGJSQdy8",
+    'authDomain': "face-recognition-2da61.firebaseapp.com",
+    'projectId': "face-recognition-2da61",
+    'storageBucket': "face-recognition-2da61.appspot.com",
+    'messagingSenderId': "204929907269",
+    'appId': "1:204929907269:web:af60f3c7ec62650eda812c",
+    'measurementId': "G-SWFLKS7JX9",
+    'serviceAccount':'serviceAccount.json',
+    'databaseURL': 'https://face-recognition-2da61-default-rtdb.firebaseio.com/'
+  
+}
+firebase = pyrebase.initialize_app(config)
+storage = firebase.storage()
+path_cloud = 'images'
+
+all_files = storage.child("images").list_files() # get all file
+cnt = 0
+#  print(all_files)
+for file in all_files:
+   print(file.name)
+   names = file.name
+   file.download_to_filename(path+names)
+   cnt += 1
 
 
 images =[]#list to hold images from the folder
@@ -42,7 +69,7 @@ def findEncoding(images):#function to find encodings of images
     return encodingslist
 def attendance(name,choice):#function to write update to the csv file, the name, time, date and gender
 
-    with open(r'attendance.csv', 'r+') as f:
+    with open(r'C:\Users\Client\Documents\computer vision\attentence system\attendance.csv', 'r+') as f:
         datalist = f.readlines()
         namelist =[]
         for line in datalist:
