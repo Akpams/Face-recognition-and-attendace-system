@@ -14,3 +14,5 @@ Note**
 
 
 For face_recognition to work cmake must be installed and compiled, this also include installing dlib
+
+The Script also include code that can download images from firebase database into your local device for comparison.
