@@ -27,12 +27,12 @@ path =r'C:\Users\Client\Documents\computer vision\from database\images\\'
 ##getting images from database
 
 config ={
-    'apiKey': "AIzaSyBF_zQsLersNz-jEIZqFEZZ4JhcGJSQdy8",
-    'authDomain': "face-recognition-2da61.firebaseapp.com",
+    'apiKey': "AIzaSyBF_zQsLersNz-jEIZqFEZZ4JhcGJSQdy2228",
+    'authDomain': "face-recognition-2da61.fireba222seapp.com",
     'projectId': "face-recognition-2da61",
     'storageBucket': "face-recognition-2da61.appspot.com",
     'messagingSenderId': "204929907269",
-    'appId': "1:204929907269:web:af60f3c7ec62650eda812c",
+    'appId': "1:204929907269:web:af60f3c7ec62650ed222a812c",
     'measurementId': "G-SWFLKS7JX9",
     'serviceAccount':'serviceAccount.json',
     'databaseURL': 'https://face-recognition-2da61-default-rtdb.firebaseio.com/'
